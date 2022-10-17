@@ -1,23 +1,36 @@
 import logo from './logo.svg';
 import './App.css';
+import './HeaderUrQuery/HeaderUrQuery.js';
+import Table from 'react-bootstrap/Table';
+import Document from './Document/Document.js';
+import HeaderUrQuery from './HeaderUrQuery/HeaderUrQuery.js';
+import Editor from './Editor/Editor.js';
+import Response from './Response/Response.js';
 
 function App() {
   return (
+
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HeaderUrQuery></HeaderUrQuery>
+      <Table striped bordered hover>
+        <tbody>
+          <tr>
+            <td>
+              <Editor></Editor>
+            </td>
+            <td>
+              <Document></Document>
+            </td>
+          </tr>
+          <tr>
+            <td colSpan="2">
+              <Response></Response>
+            </td>
+          </tr>
+        </tbody>
+      </Table>
+      
+
     </div>
   );
 }
